@@ -1,6 +1,6 @@
 {
   "name": "sepp",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A cli tool to initialize and build boilerplates and projects",
   "main": "dest",
   "bin": {
@@ -46,7 +46,7 @@
     "template",
     "boilerplate",
     "project",
-    "cli",    
+    "cli",
     "scaffold",
     "tool"
   ],
