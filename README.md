@@ -2,6 +2,10 @@
 
 > A cli tool to initialize and build boilerplates and projects
 
+[![Build Status](https://travis-ci.org/aichbauer/sepp.svg?branch=master)](https://travis-ci.org/aichbauer/sepp)
+[![Build status](https://ci.appveyor.com/api/projects/status/ir6sa68k4at1s0cm?svg=true)](https://ci.appveyor.com/project/aichbauer/sepp)
+[![Coverage Status](https://coveralls.io/repos/github/aichbauer/sepp/badge.svg?branch=master)](https://coveralls.io/github/aichbauer/sepp?branch=master)
+
 ## Installation
 
 ```sh
