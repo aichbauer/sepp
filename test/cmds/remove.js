@@ -13,7 +13,7 @@ test('CMDS | REMOVE | check command name, aliases, and desc', (t) => {
     desc,
   };
   const expected = {
-    command: 'remove <templateName>',
+    command: 'remove <name>',
     aliases: ['rm'],
     desc: 'Remove a installed sepp template',
   };
