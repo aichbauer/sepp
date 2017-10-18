@@ -1,0 +1,29 @@
+{
+  "questions": [
+    {
+      "type": "input",
+      "name": "projectName",
+      "message": "The name of your project: "
+    },
+    {
+      "type": "input",
+      "name": "projectDesc",
+      "message": "The secription of your project: "
+    },
+    {
+      "type": "input",
+      "name": "githubUsername",
+      "message": "The github user name: "
+    },
+    {
+      "type": "input",
+      "name": "author",
+      "message": "Your real name: "
+    },
+    {
+      "type": "input",
+      "name": "website",
+      "message": "Your website: "
+    }
+  ]
+}

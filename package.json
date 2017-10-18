@@ -1,0 +1,80 @@
+{
+  "name": "sepp",
+  "version": "0.0.0",
+  "description": "A cli tool to initialize and build boilerplates and projects",
+  "main": "dest",
+  "bin": {
+    "sepp": "./dest/cli.js"
+  },
+  "scripts": {
+    "pretest": "npm run lint & npm run babel",
+    "test": "nyc ava",
+    "lint": "eslint lib test",
+    "babel": "babel lib -d dest",
+    "prepublish": "npm run babel",
+    "prepush": "npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "test",
+      "dest",
+      "lib/helpers/create-project.js",
+      "lib/cli.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aichbauer/sepp.git"
+  },
+  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aichbauer/sepp/issues"
+  },
+  "keywords": [
+    "development",
+    "dev",
+    "build",
+    "template",
+    "boilerplate",
+    "project",
+    "cli",    
+    "scaffold",
+    "tool"
+  ],
+  "homepage": "https://github.com/aichbauer/sepp#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "coveralls": "^2.12.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb-base": "^11.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "husky": "^0.13.2",
+    "nyc": "^10.1.2"
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "cli-columns": "^3.1.2",
+    "fs-extra": "^4.0.2",
+    "git-clone-repo": "^1.0.0",
+    "input-is": "^1.1.2",
+    "inquirer": "^3.0.6",
+    "is-git-remote": "^1.0.1",
+    "json-extra": "^0.5.0",
+    "read-dir-names": "^1.0.0",
+    "template-dir": "^2.0.1",
+    "update-notifier": "^2.1.0",
+    "yargs": "^8.0.1"
+  }
+}
