@@ -35,6 +35,8 @@ Sepp was build to be as simple as possible, so there are just a few commands you
 
 ## Options
 
+Sepp was build to be as simple as possible, so there are just a few options you need to know.
+
 * [sepp --help](#sepp---help)
 
 ### sepp start
@@ -54,17 +56,17 @@ With `sepp add <url>` you can add new template project from any git remote repos
 
 This command will search for the repository behind the `<url>` you provided and clone it to `.sepp/templates`. If you use `username/repositoryname`, this command will search by default repositories on [github](https://github.com).
 
-```
-# add my node-module template
-$ sepp add aichbauer/node-module-template
+```sh
+# add the node-module template
+$ sepp add aichbauer/node-module
 ```
 
 ### sepp remove 
 
-With `sepp version` you can remove a installed `sepp template`.
+With `sepp remove` you can remove a installed `sepp template`.
 
 ```sh
-# remove my node-module template
+# remove the node-module template
 $ sepp remove node-module
 ```
 
@@ -79,7 +81,7 @@ $ sepp search
 
 ### sepp list 
 
-With `sepp version` you can display all `sepp templates`, already installed.
+With `sepp list` you can display all `sepp templates` that are installed.
 
 ```sh
 # list all installed templates
