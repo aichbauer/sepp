@@ -6,6 +6,20 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ir6sa68k4at1s0cm?svg=true)](https://ci.appveyor.com/project/aichbauer/sepp)
 [![Coverage Status](https://coveralls.io/repos/github/aichbauer/sepp/badge.svg?branch=master)](https://coveralls.io/github/aichbauer/sepp?branch=master)
 
+## Table of contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Create a template](#create-a-template)
+* [Commands](#commands)
+  * [sepp start](#sepp-start)
+  * [sepp add <url>](#sepp-add-url)
+  * [sepp search](#sepp-search)
+  * [sepp list](#sepp-list)
+  * [sepp version](#sepp-version)
+* [Options](#options)
+  * [sepp --help](#sepp---help)
+
 ## Installation
 
 ```sh
@@ -22,6 +36,69 @@ Forget the times where you git clone a boilerplate or copy a folder and changing
 ```sh
 $ sepp start
 ```
+
+## Create a template
+
+Create a new folder.
+```sh
+# cd into your project directory
+cd path/to/your/projects
+# create a new folder
+mkdir my-sepp-template
+```
+
+Create a sepp folder inside of your new template file. This is the directory to place al information that it can be used with the `sepp` command line interface. This directory will not be copied (e.g. `sepp` directory is excluded) if you create a new project with sepp.
+```sh
+# cd into your template directory
+cd my-sepp-template
+# create a new sepp folder
+mkdir sepp
+```
+
+Inside of your sepp directory you can create file called `sepp-questions.json`.
+
+```sh
+# cd into the sepp directory
+cd sepp
+# create a sepp-questions.json
+touch sepp-questions.json
+```
+
+Inside the `sepp-questions.json` you can define the variables that you can use inside of your template files.
+For the questions we use the library [inquirer](https://github.com/SBoudrias/Inquirer.js#questions). When you create a new project with `sepp start` you got requested to answer this questions.
+
+```json
+{
+  "questions": [
+    {
+      "type": "input",
+      "name": "projectName",
+      "message": "The name of your project: "
+    },
+    {
+      "type": "input",
+      "name": "projectDesc",
+      "message": "The description of your project: "
+    },
+  ]
+}
+```
+
+Now create your template files. For example, a `package.json` file. Inside your templates you can use the variables difined inside your `sepp-questions.json` as `name`.
+
+```json
+{
+  name: "{{projectName}}",
+  version: "0.0.0",
+  description: "{{projectDesc}}"
+}
+```
+
+Use this template with `sepp`.
+
+You can either create a `.sepp/templates` folder and copy/paste `my-sepp-template` into this directory or you can push it to a remote git repositiry and use [sepp add <url>](#sepp-add-url) to add it to your `.sepp/templates` directory.
+
+If you decide to make it available as a public sepp template, you can host your `sepp template` on github and add the tags `sepp` and `template` to this repository, and anyone using `sepp` can find your `sepp template` using `sepp search`.
 
 ## Commands
 
