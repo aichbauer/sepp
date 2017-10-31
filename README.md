@@ -88,9 +88,9 @@ Now create your template files. For example, a `package.json` file. Inside your 
 
 ```json
 {
-  name: "{{projectName}}",
-  version: "0.0.0",
-  description: "{{projectDesc}}"
+  "name": "{{projectName}}",
+  "version": "0.0.0",
+  "description": "{{projectDesc}}"
 }
 ```
 
